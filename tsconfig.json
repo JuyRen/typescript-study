@@ -1,0 +1,28 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "target": "esnext",
+    // ***** TypeCheck *****
+    "allowUnreachableCode": false, // 不允许存在访问不了的代码
+    "allowUnusedLabels": false, // // js中不常见
+    "exactOptionalPropertyTypes": true, // 可选属性赋值不能为undefined
+    "noFallthroughCasesInSwitch": true, // 前面的case不允许没有return或break 提示：switch 语句中的 Fallthrough 情况
+    "noImplicitAny": true, // 不允许隐式属性为any，报错：参数“s”隐式具有“any”类型
+    "noImplicitOverride": true, // 不允许隐式覆盖，报错：此成员必须有 "override" 修饰符
+    "noImplicitReturns": true, // 不允许隐式return，提示：并非所有代码路径都返回值
+    "noImplicitThis": true, // 不允许隐式的this， 报错: "this" 隐式具有类型 "any"，因为它没有类型注释
+    "noPropertyAccessFromIndexSignature": true, // 未知字段使用索引才能访问, 报错： 属性“xxxx”来自索引签名，因此必须使用[“xxxx”]访问它
+    "noUncheckedIndexedAccess": true, // 使用未知字段时，返回类型增加undefined
+    "noUnusedLocals": true, // 不允许有未使用的变量 提示：已声明“xxx”，但从未读取其值
+    "noUnusedParameters": true, // 不允许有未使用的参数 提示：已声明“xxx”，但从未读取其值
+    "strict": true, // 关于strict的选项默认值为 该值
+    "strictNullChecks": true, // 严格检查null undefined
+    "strictBindCallApply": true, // 使用bind call apply时，校验传参
+    "strictFunctionTypes": true, // function类型严格匹配
+    "strictPropertyInitialization": true, // 校验类中property的定义
+    "useUnknownInCatchVariables": true // catch中的err类型设为 unknown
+    // ***** END *****
+
+    // ***** Modules *****
+  }
+}
