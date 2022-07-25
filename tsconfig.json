@@ -1,7 +1,7 @@
 {
-  "include": ["src/**/*"],
   "compilerOptions": {
-    "target": "esnext",
+    "outDir": "dist",
+
     // ***** TypeCheck *****
     "allowUnreachableCode": false, // 不允许存在访问不了的代码
     "allowUnusedLabels": false, // // js中不常见
@@ -20,9 +20,37 @@
     "strictBindCallApply": true, // 使用bind call apply时，校验传参
     "strictFunctionTypes": true, // function类型严格匹配
     "strictPropertyInitialization": true, // 校验类中property的定义
-    "useUnknownInCatchVariables": true // catch中的err类型设为 unknown
+    "useUnknownInCatchVariables": true, // catch中的err类型设为 unknown
     // ***** END *****
 
     // ***** Modules *****
-  }
+    "baseUrl": "./src",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "paths": {
+      "static/*": ["static/*"]
+    },
+    "resolveJsonModule": true, // 解析JSON文件
+    // ***** END *****
+
+    // ***** Emit *****
+    "declaration": true, // 生成d.ts文件
+    "declarationDir": "./dist/types", // d.ts目录
+    "declarationMap": true, // d.ts map文件
+    "downlevelIteration": true, // 新语法的polyfill
+    "emitDeclarationOnly": false, // 只生成d.ts文件
+    "importHelpers": true, // 从tslib库中引入类似polyfill的帮助函数
+    "preserveConstEnums": true,
+    // ***** END *****
+
+    // ***** JavaScript Support *****
+    "allowJs": false,
+
+    // ***** Interop Constraints *****
+    "allowSyntheticDefaultImports": true, // 允许合成导入没有 export default的
+    "esModuleInterop": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*"]
+  // "exclude": ["src/typeCheck/*", "src/modules", "src/emit", "src/static"]
 }
